@@ -1,0 +1,16 @@
+<div *ngFor="let favorite of favorites">
+{{favorite.artiste}} - {{favorite.titre}}  
+<img src="{{favorite.imageAlbum}}">
+</div>
+
+<h1>Artistes</h1>
+
+<div *ngFor="let artiste of artistes">
+{{artiste.artiste}} - {{artiste.titre}}  
+<img src="{{artiste.imageAlbum}}">
+
+<button (click)="likeArtiste(artiste)" >
+<i [ngClass]='favorites.includes(artiste) ? "fa fa-heart" : "fa fa-heart-o"' aria-hidden="true"></i>
+</button>
+
+</div>

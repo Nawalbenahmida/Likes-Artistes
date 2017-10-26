@@ -1,0 +1,15 @@
+img{
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.fa.fa-heart{
+    color: red;
+}
+/*
+.Active:hover{
+    color: aqua;
+}*/
+
