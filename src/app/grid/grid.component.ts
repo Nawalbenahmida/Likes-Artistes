@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AtService } from '../at/at.service';
+import { Disco } from '../disco/disco';
 
 export class Artiste {
     artiste: string;
     titre: string;
     imageAlbum: string;
-    /*favorit?: boolean;*/
+
 }
 
 const ARTISTES = [
@@ -20,36 +22,34 @@ const ARTISTES = [
     styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-    
-    
-    
- 
     @Input() artistecoeur: string;
 
     artistes: Artiste[];
 
-    favorites: Artiste[] = [ ];
+    favorites: Disco[] = [ ];
 
-    selectedCoeur(artiste) {
-        console.log(artiste);
-
+    selectedCoeur(disco) {
+        console.log(disco);
     }
-    
-    
 
-
-
-    likeArtiste(a: Artiste) {
+    likeArtiste(a: Disco) {
         this.favorites.push(a);
         console.log(a);
-    } 
+    }
 
+    discos: Disco[];
 
-    constructor() { }
+    constructor(private at: AtService) {
+
+    }
 
     ngOnInit() {
         this.artistes = ARTISTES;
-       
+
+        this.at.discos.subscribe( (c: Disco[]) => {
+            this.discos = c;
+        });
+
     }
 
 }

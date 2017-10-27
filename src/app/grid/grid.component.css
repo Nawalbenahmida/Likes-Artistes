@@ -1,15 +1,26 @@
 img{
     margin: 20px;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
+    
 }
 
 .fa.fa-heart{
     color: red;
 }
-/*
-.Active:hover{
-    color: aqua;
-}*/
+
+button{
+        border-radius: 73%;
+    background: white;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+p.name{
+    font-family: 'Montserrat', sans-serif;
+}
 

@@ -1,16 +1,25 @@
+
+
 <div *ngFor="let favorite of favorites">
-{{favorite.artiste}} - {{favorite.titre}}  
-<img src="{{favorite.imageAlbum}}">
+   <img src="{{favorite.image[4]['#text']}}" alt="">
+    <p class="name">{{favorite.name}} </p>
+
 </div>
 
-<h1>Artistes</h1>
 
-<div *ngFor="let artiste of artistes">
+<!--<div *ngFor="let artiste of artistes">
 {{artiste.artiste}} - {{artiste.titre}}  
 <img src="{{artiste.imageAlbum}}">
+</div>-->
 
-<button (click)="likeArtiste(artiste)" >
-<i [ngClass]='favorites.includes(artiste) ? "fa fa-heart" : "fa fa-heart-o"' aria-hidden="true"></i>
+<div *ngFor="let disco of discos">
+<img src="{{disco.image[4]['#text']}}" alt="">
+<p class="name">{{disco.name}} </p>
+ <button (click)="likeArtiste(disco)" >
+ <i [ngClass]='favorites.includes(disco) ? "fa fa-heart" : "fa fa-heart-o"' aria-hidden="true"></i>
 </button>
-
-</div>
+   
+   
+  
+  
+  </div>
